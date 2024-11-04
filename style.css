@@ -9,6 +9,12 @@ body {
     overflow: hidden;
 }
 
+body {
+    background-image: url(./img/cloud.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
 .container {
     display: flex;
     justify-content: center;
@@ -77,18 +83,19 @@ body {
     right: 3.7em;
     transform: rotate(30deg);
     border-bottom: 2.1em solid transparent;
-    border-left: 2.4em solid #401d03;
+    border-left: 2.4em solid var(--cool-green);
   }
+  :root {
+    --cool-green: #517f54; 
+}
 
   .pumpkin .eye.left {
     left: 3.7em;
     transform: rotate(-30deg);
     border-bottom: 2.1em solid transparent;
-    border-right: 2.4em solid #401d03;
+    border-right: 2.4em solid var(--cool-green);
   }
-  .eye:hover {
-    
-  }
+
 
   .pumpkin .mouth {
     width: 4em;
@@ -142,7 +149,7 @@ body {
     border-bottom: 0.5em solid transparent;
     border-left: 1em solid #401d03;
   }
-
+/*
  .shadow {
     margin: 10% auto 0;
     background: #000;
@@ -151,6 +158,45 @@ body {
     border-radius: 50%;
     animation: zoom 3s infinite;
   }
+    */
+  .arm {
+    position: absolute;
+    width: 10px; 
+    height: 90px; 
+    background-color: orange; 
+    border-radius: 5px; 
+}
+
+.left-arm {
+    left: -15px; 
+    top: 30px; 
+    transform: rotate(30deg); 
+    animation: wave 1s infinite;
+}
+
+.right-arm {
+    right: -15px; 
+    top: 30px; 
+    transform: rotate(-30deg);
+    animation: wave-right 1s infinite; 
+}
+@keyframes wave {
+    0%, 100% {
+        transform: rotate(30deg); 
+    }
+    50% {
+        transform: rotate(50deg); 
+    }
+}
+
+@keyframes wave-right {
+    0%, 100% {
+        transform: rotate(-30deg);
+    }
+    50% {
+        transform: rotate(-50deg); 
+}
+}
 
   @keyframes float {
     0%, 100% {
